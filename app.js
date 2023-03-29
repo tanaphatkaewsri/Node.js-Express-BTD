@@ -2,12 +2,15 @@ const express = require('express'); // run Express
 const chalk = require('chalk'); // chalk 5 is ESM if you want to use Chalk with TypeScript you should Chalk 4
 const debug = require('debug')('app'); // and go to path at cmd and run : set DEBUG=* & node app.js (we run at cmd because terminal at vsc is a power shell so it's some difference command)
 const morgan = require('morgan');
+const path = require('path');
 
 const app = express(); // call Express run app
 const port = 3000; // set port
 
 app.use(morgan('combined')); // use morgan
 // show request?, windows?, os? information
+
+app.use(express.static(path.join(__dirname, "/public/"))) // for use path that we specific -> tell where is static path -> directory path for tell where is express -> and use folder that keep static file
 
 app.get("/", (req, res) => { // for manage request that comming at path "/", if they come in this page we will response something
     res.send('Hello World'); // we will response txt 'Hello World'
