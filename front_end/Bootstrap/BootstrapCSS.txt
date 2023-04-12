@@ -33,4 +33,4 @@
              </form>
         -The <input> element
             -is the most use form element
-            -<input> element can be display in many ways, depending on the type attribute
+            -<input> element can be display in many ways, depending on the type attribute <-- use this to next step 12/04/66
