@@ -1,0 +1,36 @@
+/////Bootstrap CSS Framework - Full Course for Beginners
+
+////Start
+-What is Bootstrap?
+-Why use Bootstrap?
+    -cause bootstrap grid
+
+////Installation and Setup
+-have 3 options
+    -download
+///---side quest---///
+-Emmet (is a shortcut of code) -> Learn Emmet In 15 Minutes
+    -is actually build in Visual Studio Code
+    -! -> generate all part HTML
+    -name_of_tag
+    -name_of_tag.name_of_class (.=class, #=id)
+    -.name_of_class -> gen <div> automatically (.=class, #=id)
+    -name_of_class[attribute]
+    -[attribute] -> gen <div> automatically
+    -'>' use for create child element
+        -ex div.purple>spand -> is use <div> class="purple" and create <span> inside <div>
+        -.menu>ul>li{text}*3 -> create <li>text</li> 3 times
+        -.menu>ul>li{text $}*3 -> $ is a order number (1, 2, 3, ...) , we can use $ for class too
+            -$$ -> 01, 02, 03, ...
+    - '+' use for create sibling element
+    - '()' for group element
+    ///---side quest---///
+    -HTML Forms
+        -use to collect user input. (the user input is most often sent to a server for processing)
+        -<form> element is a container for difference types of input elements (ex text fields, checkboxes, etc.)
+            -<form>
+                form elements
+             </form>
+        -The <input> element
+            -is the most use form element
+            -<input> element can be display in many ways, depending on the type attribute

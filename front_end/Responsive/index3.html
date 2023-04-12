@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chania Info</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        html {
+            font-family: 'Lucida Sans',sans-serif;
+        }
+        .header {
+            background-color: #9933cc;
+            color: #ffffff;
+            padding: 15px;
+        }
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+        [class*="col-"] {
+            float: left;
+            padding: 15px;
+        }
+        .menu ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        .menu li {
+            /* text-align: left; */
+            padding: 8px;
+            margin-bottom: 7px;
+            background-color: #33b5e5;
+            color: #ffffff;
+            box-shadow: 1px 1px 4px rgba(0,0,0,0.12), 2px 2px 6px rgba(0,0,0,0.24);
+        }
+        .menu li:hover {
+            background-color: #0099cc;
+        }
+        .aside {
+            background-color: #33b5e5;
+            padding: 15px;
+            color: #ffffff;
+            text-align: center;
+            font-size: 14px;
+            box-shadow: 1px 1px 4px rgba(0,0,0,0.12), 2px 2px 6px rgba(0,0,0,0.24);
+        }
+        .footer {
+            background-color: #0099cc;
+            color: #ffffff;
+            text-align: center;
+            font-size: 12px;
+            padding: 12px;
+        }
+        @media screen and (max-width: 600px) {
+        /* for mobile */
+        [class*="col-"] {width: 100%;}
+        .menu li {text-align: center};
+        }
+        /* tablets */
+        @media screen and (min-width: 600px) {
+            .col-s-3 {width: 25%}
+            .col-s-9 {width: 75%}
+            .col-s-12 {width: 100%}
+        }
+        /* desktop */
+        @media screen and (min-width: 720px) {
+            .col-3 {width: 25%;}
+            .col-6 {width: 50%;}
+        }      
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Chania</h1>
+    </div>
+
+    <div class="row">
+        <div class="col-3 col-s-3 menu">
+            <ul>
+                <li>The Flight</li>
+                <li>The City</li>
+                <li>The Island</li>
+                <li>The Food</li>
+            </ul>
+        </div>
+        <div class="col-6 col-s-9">
+            <h1>The City</h1>
+            <p>Chania is the capital of the Chania region on the island of Crete. The city can be devided in two part, the old town and the modern city.</p>
+        </div>
+        <div class="col-3 col-s-12">
+            <div class="aside">
+                <h2>What?</h2>
+                <p>Chania is a city on the island of Crete.</p>
+                <h2>Where?</h2>
+                <p>Crete is a Greek island in the Mediterranean Sea.</p>
+                <h2>How?</h2>
+                <p>You can reach Chania airport from all over Europe.</p>
+            </div>
+        </div>
+    </div>
+
+<div class="footer">
+    <p>Resize the browser window to see how the content respond to the resizing.</p>
+</div>
+
+</body>
+
+
+</html>

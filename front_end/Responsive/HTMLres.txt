@@ -1,0 +1,56 @@
+/////HTML Responsive Web Design
+-Responsive web design is the way to create web page that look good on any devices
+-A responsive web design will auto adjust for difference screen sizes and viewports.
+
+////What is Responsive Web Design?
+-is about using HTML and CSS to auto resize, hide, shrink, enlarge a web site to make look good on any devices
+
+////Setting The Viewport (viewport is your browser window)
+-use <meta> to set viewport
+-use <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+////Responsive Images
+-make images that scale in any browser size
+    -use the width property -> CSS: width 100% (image will scale up and down follow size of viewport)
+        -use <img src="img.jpg" style="width:100%;">
+    -use the max-width property -> the image will scale down if it has to, but never scale up to be larger than original size
+        -use <img src="img.jpg" style="max-width:100%;">
+-show difference image depending on browser width
+    -use
+        <picture>
+            <source srcset="img_smallflower.jpg" media="(max-width: 600px)">
+            <source srcset="img_flowers.jpg" media="(max-width: 1500px)">
+            <source srcset="flowers.jpg">
+            <img src="img_flowers.jpg" alt="Flowers" style="width:auto;"> ????
+        </picture>
+
+////Responsive Text Size
+-text size can be set 'vw' unit = viewport width
+-use: <h1 style="font-size:10vw;"> (1vw = 1% of viewport width)
+
+////Media Queries
+-addition to resize text and images, it's use media queries in responsive web pages
+-use: @media screen and (max-width: 800px) {
+    .left, .main, .right {
+        width: 100%; <- The width is 100%, when the viewport is 800px or smaller
+    }
+}
+
+////Responsive Web Page Full Example
+-<style> tag use for defune style HTML elements, using CSS (Cascading Style Sheets) rules.
+-`*` is select all element, when you use CSS rule, it applies the styles to all elements on the page
+-`box-sizing: border-box`
+    -is allow use to include (padding + border = width)
+    -if we dont use box-sizing (width + padding + border = actual width element)
+-`float` is property that sepecifics how element should be float
+    -left, right, none, inherit (parent element)
+-`margin-top` set the top margin (area outside border) of element
+-`display` that set specific to behavior elements
+
+-padding : (top bottom), (left right)
+-@media : use for set when web browser screen have a size in condition
+-overflow : clip the content down when content out of context
+
+////Responsive Web Design - Frameworks
+-W3.CSS
+-Bootstrap

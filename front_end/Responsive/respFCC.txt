@@ -1,0 +1,36 @@
+/////Responsive Web Design
+
+////1.Intro
+-we design and it's can work with every devices
+-we know about static site (web site that can't change) -> time to get into responsive frame
+-create single screen size -> it's can able to work on any devices
+-teaching through projects -> we get a project and learn the difference things
+-cover module   -how to approach layout
+                -CSS unit : absolute, relative, and percentages
+                -Flexbox basic (layout tool)
+                -media query basics (adapting to difference screen size)
+
+////2.CSS Units
+-Absolute units
+    -fixed size, always the same size
+    -Pixels(px)
+    -pt, cm, mm, in, etc.
+    -shouldn't use them, unless doing print styles (style for document to be printed)
+-Relative units
+    -there are two types of relative units
+        -relative to font-size <- focus on this
+            -em, rem, and etc.
+        -relative to view-port -> (view-port is your browser window)
+            -vw, vh, vmin, vmax
+-Percentage
+    -mainly use for widths (except on height, where things get weird)
+    -size relative on their parent
+
+////3.CSS Units - Percentage
+-padding -> area around content inside border
+-margin -> area around border outside border
+-use percentage size of container
+    .container {
+        width: 50% <- percentage unit mean: it's always 50% from parent (tag parent from this tag that have .container) ex <div class='container'> by the parent is <head> so it's mean width is 50% of width of tag <head>
+    }
+-all to time parent is default 100% of size web page

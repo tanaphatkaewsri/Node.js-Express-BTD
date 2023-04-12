@@ -1,0 +1,209 @@
+/////Responsive Web Design - Introduction
+
+////Introduction
+-is web page can be use in many devices ex desktops, tablets, and phone.
+-make it's look good, easy to use, not leave out information, and fit to smaller devices or any devices
+-it's call responsive web design when you use CSS and HTML to resize the content of web page
+
+////Example
+-ul = unorder list use with li
+    -list-style-type: none
+-ol = order list use with li
+
+-content = use with ::before and ::after, to insert the content
+-clear = use for control the flow after 'the float elements'
+    -both = set the element pushed below both left and right 'the float elements'
+-display = set behavior the property of an elements
+    -table = set the element behave like a <table> element
+-`*=` is call substring for maching attribute selector
+    -so `[class*="col-"]` is select target that has class attribute the string is "col-" ex col-3, col-6, etc.
+-list-style-type = use with ul, ol for setting list (li) style type
+-box-shadow: [horizontal] [vertical] [blur radius] [spread radius]
+    -box-shadow can make many layers shadow
+-use @media for set use screen side 'assending order'***
+    -min-width = use for applies the style only when the screen width is 600px or greater than ***
+    -max-width = use set condition when screen size smaller than 600px
+
+////Responsive Web Design - The Viewport
+-What is the Viewport?
+    -is the area of a web page that user can visible
+    -Viewport has a many size depend on devices
+-Setting The Viewport
+    -HTML5 use method for control the viewport by use <meta>
+    -use <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        -width=device-width -> set the width of web page follow the screen-width of the device
+        -initial-scale=1.0 -> part for set initial zoom level when the page is first loaded by the browser
+-Size Content to The Viewport
+    -use scroll web sites vertically
+    -dont use fixed width elements
+    -use CSS media queries to apply difference styling for small and large screens
+
+////Responsive Web Design - Grid-View
+-What is a Grid-View?
+    -Many web pages are based on grid-view, which means the page is divided into columns
+    -A responsive grid-view often has 12 columns, and has a total width of 100%, it's will shrink and expand as you resize the browser window.
+-Building a Responsive Grid-View
+    -set the HTML elements by use box-sizing property and set to border-box (for make sure for the padding and border are include in the total width)
+        -try separate with 2 columns (25%, 75%) 
+    -use with 12 columns, so use one column = 100/12 = 8.33%
+        -make one class for each 12 columns, by use class="col-(number of column which element take span)"
+        -   .col-1 {width: 8.33%;}
+            .col-2 {width: 16.66%;}
+            .col-3 {width: 25%;}
+            .col-4 {width: 33.33%;}
+            .col-5 {width: 41.66%;}
+            .col-6 {width: 50%;}
+            .col-7 {width: 58.33%;}
+            .col-8 {width: 66.66%;}
+            .col-9 {width: 75%;}
+            .col-10 {width: 83.33%;}
+            .col-11 {width: 91.66%;}
+            .col-12 {width: 100%;}
+    -each row should be wrapped in <div class="row"> and the number of columns in row should always add up to 12
+    -for prevent another elements that come in the row (it's will make our column mess) we will use 'clear the flow'
+        -row::after{
+            clear: both;
+        }
+
+////Responsive Web Design - Media Queries
+-use the @media for a block in CSS properties when condition is true
+-ex if the browser window is 600px or smaller (max-width), the background color will be lightblue
+    -@media only screen and (max-width: 600px) {
+        body {
+            background-color: lightblue;
+        }
+    }
+-Add a Breakpoint
+    -use for set 600px or less than (max-width)
+-Always Design for Mobile First
+    -design for mobile before designing for desktop or any devices
+    -design when the width gets larger than 600px. (min-width) this will make our design Mobile first.
+-when width -> tablet
+    -first section (col-3) will span 3 columns (col-s-3)
+    -second section (col-6) will span 9 columns (col-s-9)
+    -third section (col-3) will span 12 columns (col-s-3)
+    -   <div class="row">
+            <div class="col-3 col-s-3">...</div>
+            <div class="col-6 col-s-9">...</div>
+            <div class="col-3 col-s-12">...</div>
+        </div>
+-it's have a lot of devices so keep it's simple by use target for 5 groups
+    -extra small: less than 600px (max-width)
+    -small: 600px and up (min-width: 600px)
+    -medium: 768px and up (min-width: 768px)
+    -large: 992px and up (min-width: 992px)
+    -extra large: 1200px and up (min-width: 1200px)
+-Portrait(vertiacl) / Landscape(horizontal)
+    -we can set @media for condition when size of web page is width > height
+    -@media only screen and (orientation: landscape) {
+        ...
+    }
+-@media query   -hide -> display: none;
+                -change size -> font-size: 80px;
+
+////Responsive Web Design - Images
+-using the width property
+    -width: 100%;
+-from use width: percentage have a prob because image can be larger than original size, for fix this we will use (max-width) property instead
+    -max-width: 100% -> image will scale down when if it has to, but never scale up to be larger than the original size
+---////---
+side quest : HTML <img> Tag
+-tag <img> use to embed an image in a HTML page (image are not insert to the web page but image are linked to web page)
+-<img> is create a  holding space for the referenced image.
+-<img> require 2 attributes 1.src = path of the image 2.alt = alternative txt for image, when image cannot display
+---////---
+-if margin = auto : it's will be center horizontal on the page
+-Background Images
+    -background-image: url(path_img)
+    -if use the 'background-size: contain', background image will scale and try to fit the content area. (however, the image will keep aspect ratio from the same size)
+    -background-repeat
+    -background-size: 100% 100% -> it's will be streach to cover entire of the content
+    -background-size: cover -> it's will streach cover entire of the content but will keep aspect ratio
+-Difference Image for Difference Devices
+    -use @media screen and (size of device){
+        background-image: url()
+    }
+        -if we use 'min-device-width' instead 'min-width' it's will be check width of device instead width of web browser
+    -HTML <picture> Element
+        -it's flexible more than <img> but should use <img> too, because some device doesn't support <picture> (and it's work together!!!)****
+        -<picture> can use with media and more flexible attribute and can add pic more than 1
+        -<picture>
+            <source srcset="path_img" media="(max-width: 400px)">
+            <source srcset="path_img">
+            <img src="img_flowers.jpg" alt="Flowers"> -> (should use <img> too, because some device doesn't support <picture>, and it's work together!!!)
+        </picture>
+
+////Responsive Web Design - Video
+-CSS
+    video {
+        weight: 100%,
+        height: auto;
+    }
+ -HTML
+    <video width="400" controls>
+        <source src="path_video" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
+    -width="400" is 'a fallback width' -> is a width value that provide as a backup when web browser or device does not support a CSS or value
+    -'controls' is used to add a set of playback controls to the video player, such as play, pause, and volume controls.
+    -can use 'max-width' in CSS too
+
+////Responsive Web Design - Frameworks
+-framework is a set of pre-written code or software tools that provides a standardized way of building applications or software
+-for front-end have W3.CSS framework, and Bootstrap framework
+
+////How To Add CSS
+-3 ways of insert a style sheet (CSS)
+-External CSS
+    -the external file, that you can change the look of entire website by changing just one file!
+    -<link rel="stylesheet" href="mystyle.css">
+    -the external.css file should not contain any HTML tags.***
+-Internal CSS
+    -use when one single HTML page has a unique style.
+    -use <style> tag inside <head> tag in HTML page.
+-Inline CSS (use with sparingly)
+    -use to apply a unique style for a single element
+    -use style="" inside of the element
+    -<p style="color:red;">This is paragraph.</p>
+-Multiple Style Sheets
+    -if some element have been defined in a difference style sheet (ex same tag but set CSS in Internal and External together) the value from the last read style sheet it's will be used.**
+-Cascading Order (set priority of style)
+    -Inline > Internal = External > Default Browser
+
+////CSS Backgrounds
+-background-color
+    -opacity: 1 -> 0;
+    -use opacity with rgba
+        -div{
+            background:: rgba(0,128,0,0.3); is 30% opacity 
+        }
+-background-image: use image to the background of an element
+    -body {
+        background-image: url("paper.gif");
+    }
+    -background-image can be set in to a specific element
+        -p {
+            background-image: url(path_of_img);
+        }
+-background-repeat: repeats an image both horizontal and vertically
+    -repeat and no-repeat
+-background-position: use to specify the position of the background image
+    -right top
+    -center center
+    -left bottom
+-background-attachment: use to fix position background even scroll web browser
+    -fixed, scroll
+-background-shorthand: to shorten the code we can use only background: [color] [image] [repeat] [attachment] [position]
+
+////CSS Borders
+-the CSS border allow you to specify the style, width, and color of an element's border
+-border-style: dotted dashed solid double;
+-border-width: set size of line border 4 values
+    -5px,thin , medium, thick
+-border-color
+-border-side:
+    -border-left-style:
+    -border-style: dotted solid dashed double (4 side of border)
+-border-shorthand
+    -border: 5px soild red;
+-border-radius: 5px; (for round angle)
